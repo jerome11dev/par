@@ -10,7 +10,7 @@ import com.sgic.hrm.repository.ReportParAppraiseRepository;
 public class ReportParAppraiseService {
 
 	@Autowired
-	ParServices parServices;
+	ParServiceImpl parServices;
 	
 	@Autowired
 	ReportParAppraiseRepository reportParAppraiseRepo;

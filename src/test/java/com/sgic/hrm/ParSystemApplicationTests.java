@@ -12,7 +12,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ReportParAppraise;
 
-import com.sgic.hrm.serviceImpl.ParServices;
+
+
+
+import com.sgic.hrm.serviceImpl.ParServiceImpl;
+
 import com.sgic.hrm.serviceImpl.ReportParAppraiseService;
 
 
@@ -22,8 +26,9 @@ public class ParSystemApplicationTests {
 
 	
 	@Autowired
-	private ParServices parService;
+	private ParServiceImpl parService;
 	
+
 	
 	@Autowired
 	ReportParAppraiseService reportParAppraiseService;
@@ -53,10 +58,5 @@ public class ParSystemApplicationTests {
 		Par parObj=new Par(1,"E001",3.5,null);
 		parService.createPar(parObj);
 	}
-	
-
-	
-	
-	
 
 }

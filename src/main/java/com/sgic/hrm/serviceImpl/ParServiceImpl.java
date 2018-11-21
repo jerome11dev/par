@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.repository.ParRepository;
+import com.sgic.hrm.service.ParService;
 
 @Service
-public class ParServices {
+public class ParServiceImpl implements ParService {
 
 	@Autowired
 	ParRepository parRepo;

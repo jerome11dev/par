@@ -46,6 +46,18 @@ public class Par {
 	}
 	
 	
+	
+	
+	public Par(Integer id, String empId, Date scheduleDate) {
+		
+		this.id = id;
+		this.empId = empId;
+		this.scheduleDate = scheduleDate;
+	}
+
+
+
+
 	public Par() {
 		
 	}

@@ -25,6 +25,10 @@ public class ScheduleParAppraisor {
 		this.appraisor_id = appraisor_id;
 	}
 
+	public ScheduleParAppraisor() {
+		
+	}
+
 	public Integer getId() {
 		return id;
 	}
