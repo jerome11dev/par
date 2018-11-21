@@ -23,5 +23,16 @@ public class ParContent {
 		this.contentName = contentName;
 	}
 	
+	public ParContent(Integer id, String contentName) {
+		this.id = id;
+		this.contentName = contentName;
+	}
+	
+	public ParContent() {
+	
+	}
+	
+	
+	
 	
 }
