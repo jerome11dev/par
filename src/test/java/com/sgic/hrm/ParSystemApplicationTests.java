@@ -1,11 +1,7 @@
 package com.sgic.hrm;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
-import java.util.Date;
-
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +11,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ReportParAppraise;
-import com.sgic.hrm.entities.ScheduleParAppraisor;
-import com.sgic.hrm.entities.ScheduleParContent;
+
 import com.sgic.hrm.serviceImpl.ParServices;
 import com.sgic.hrm.serviceImpl.ReportParAppraiseService;
-import com.sgic.hrm.serviceImpl.ScheduleParAppraisorService;
-import com.sgic.hrm.serviceImpl.ScheduleParContentService;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -30,11 +24,6 @@ public class ParSystemApplicationTests {
 	@Autowired
 	private ParServices parService;
 	
-	@Autowired
-	private ScheduleParAppraisorService scheduleParAppraisorService;
-	
-	@Autowired
-	private ScheduleParContentService scheduleParContentService;
 	
 	@Autowired
 	ReportParAppraiseService reportParAppraiseService;
@@ -65,19 +54,7 @@ public class ParSystemApplicationTests {
 		parService.createPar(parObj);
 	}
 	
-	@Test
-	public void testScheduleParAppraisorService() {
-		scheduleParAppraisorService.addParAppraisor(new ScheduleParAppraisor(1,"A001"));
-		scheduleParAppraisorService.addParAppraisor(new ScheduleParAppraisor(2,"A002"));
-		assertNotNull(scheduleParAppraisorService.genererateParAppraisorsList());
-	}
-	
-	@Test
-	public void testScheduleParContentService()  {
-		scheduleParContentService.addParContent(new ScheduleParContent(1,"Communication"));
-		scheduleParContentService.addParContent(new ScheduleParContent(2,"Attitude"));
-		assertNotNull(scheduleParAppraisorService.genererateParAppraisorsList());
-	}
+
 	
 	
 	
