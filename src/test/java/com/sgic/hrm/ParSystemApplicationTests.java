@@ -17,10 +17,10 @@ import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ReportParAppraise;
 import com.sgic.hrm.entities.ScheduleParAppraisor;
 import com.sgic.hrm.entities.ScheduleParContent;
-import com.sgic.hrm.services.ParServices;
-import com.sgic.hrm.services.ReportParAppraiseService;
-import com.sgic.hrm.services.ScheduleParAppraisorService;
-import com.sgic.hrm.services.ScheduleParContentService;
+import com.sgic.hrm.serviceImpl.ParServices;
+import com.sgic.hrm.serviceImpl.ReportParAppraiseService;
+import com.sgic.hrm.serviceImpl.ScheduleParAppraisorService;
+import com.sgic.hrm.serviceImpl.ScheduleParContentService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

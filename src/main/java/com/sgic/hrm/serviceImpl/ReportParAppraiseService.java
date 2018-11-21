@@ -1,4 +1,4 @@
-package com.sgic.hrm.services;
+package com.sgic.hrm.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

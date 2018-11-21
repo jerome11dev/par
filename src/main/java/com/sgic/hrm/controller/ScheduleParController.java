@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ScheduleParAppraisor;
 import com.sgic.hrm.entities.ScheduleParContent;
-import com.sgic.hrm.services.ParServices;
-import com.sgic.hrm.services.ScheduleParAppraisorService;
-import com.sgic.hrm.services.ScheduleParContentService;
+import com.sgic.hrm.serviceImpl.ParServices;
+import com.sgic.hrm.serviceImpl.ScheduleParAppraisorService;
+import com.sgic.hrm.serviceImpl.ScheduleParContentService;
 
 @RestController
 public class ScheduleParController {
