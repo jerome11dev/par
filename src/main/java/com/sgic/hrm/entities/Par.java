@@ -36,6 +36,20 @@ public class Par {
 	@JsonIgnore
 	private List<ScheduleParContent> scheduleParContentList;
 
+	
+	
+	public Par(Integer id, String empId, Double overAllScore, Date scheduleDate) {
+		this.id = id;
+		this.empId = empId;
+		this.overAllScore = overAllScore;
+		this.scheduleDate = scheduleDate;
+	}
+	
+	
+	public Par() {
+		
+	}
+
 	public Integer getId() {
 		return id;
 	}

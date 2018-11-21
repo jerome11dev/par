@@ -1,14 +1,28 @@
 package com.sgic.hrm.services;
 
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ReportParAppraise;
-import com.sgic.hrm.entities.ScoreParAppraisee;
+import com.sgic.hrm.repository.ReportParAppraiseRepository;
 
+@Service
 public class ReportParAppraiseService {
 
-	public void addReportParAppraise(ReportParAppraise reportParAppraise,List<ScoreParAppraisee> scoreParAppraiseeList) {
-		reportParAppraise.setScoreParAppraiseeList(scoreParAppraiseeList);
+	@Autowired
+	ParServices parServices;
+	
+	@Autowired
+	ReportParAppraiseRepository reportParAppraiseRepo;
+	
+	public boolean createReportParAppraise(ReportParAppraise reportParAppraise,Integer parId) {
+		if(parServices.findParById(parId)!=null) {
+			reportParAppraise.setPar(parServices.findParById(parId));
+			reportParAppraiseRepo.save(reportParAppraise);
+			return true;
+		}
+		return false;
 		
 	}
 }

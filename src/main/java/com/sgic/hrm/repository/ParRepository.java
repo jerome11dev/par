@@ -8,4 +8,6 @@ import com.sgic.hrm.entities.Par;
 @Repository
 public interface ParRepository extends JpaRepository<Par, Integer>{
 
+	Par findParById(Integer id);
+	
 }

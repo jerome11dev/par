@@ -27,42 +27,7 @@ public class ScheduleParController {
 	@Autowired
 	private ScheduleParContentService scheduleParContentService;
 	
-	@GetMapping("/par")
-	public Par getPardetails() {
-		Par parObj=new Par();
-		
-		scheduleParAppraisorService.addParAppraisor(new ScheduleParAppraisor(1,"A001"));
-		scheduleParAppraisorService.addParAppraisor(new ScheduleParAppraisor(2,"A002"));
-		
-		scheduleParContentService.addParContent(new ScheduleParContent(1,"Communication"));
-		scheduleParContentService.addParContent(new ScheduleParContent(2,"Attitude"));
-		
-		
-		
-		return parServices.createScheduleNewPar(parObj, 
-				scheduleParAppraisorService.genererateParAppraisorsList(), 
-				scheduleParContentService.genererateParContentList());
-	}
 	
-	@GetMapping("/abc")
-	public List<ScheduleParAppraisor> testabc() {
-Par parObj=new Par();
-		
-		scheduleParAppraisorService.addParAppraisor(new ScheduleParAppraisor(1,"A001"));
-		scheduleParAppraisorService.addParAppraisor(new ScheduleParAppraisor(2,"A002"));
-		
-		scheduleParContentService.addParContent(new ScheduleParContent(1,"Communication"));
-		scheduleParContentService.addParContent(new ScheduleParContent(2,"Attitude"));
-		
-		
-		
-		return parServices.createScheduleNewPar(parObj, 
-				scheduleParAppraisorService.genererateParAppraisorsList(), 
-				scheduleParContentService.genererateParContentList()).getScheduleParAppraisorsList();
-		
-		
-		
-	}
 	
 	@GetMapping("/parapp")
 	public List<ScheduleParAppraisor> getParAppraissor() {

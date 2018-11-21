@@ -24,6 +24,8 @@ public class ReportParAppraisor {
 	
 	private String appraisorId;
 	
+	private Double appraisorScore;
+	
 	@OneToMany(mappedBy="reportParAppraisor",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	@JsonIgnore
 	private List<ScoreParAppraisor> scoreParAppraisors;
@@ -50,6 +52,15 @@ public class ReportParAppraisor {
 
 	public void setAppraisorId(String appraisorId) {
 		this.appraisorId = appraisorId;
+	}
+
+	
+	public Double getAppraisorScore() {
+		return appraisorScore;
+	}
+
+	public void setAppraisorScore(Double appraisorScore) {
+		this.appraisorScore = appraisorScore;
 	}
 
 	public List<ScoreParAppraisor> getScoreParAppraisors() {

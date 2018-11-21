@@ -1,6 +1,9 @@
 package com.sgic.hrm;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+
+import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,9 +14,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 import com.sgic.hrm.entities.Par;
+import com.sgic.hrm.entities.ReportParAppraise;
 import com.sgic.hrm.entities.ScheduleParAppraisor;
 import com.sgic.hrm.entities.ScheduleParContent;
 import com.sgic.hrm.services.ParServices;
+import com.sgic.hrm.services.ReportParAppraiseService;
 import com.sgic.hrm.services.ScheduleParAppraisorService;
 import com.sgic.hrm.services.ScheduleParContentService;
 
@@ -22,6 +27,8 @@ import com.sgic.hrm.services.ScheduleParContentService;
 public class ParSystemApplicationTests {
 
 	
+	@Autowired
+	private ParServices parService;
 	
 	@Autowired
 	private ScheduleParAppraisorService scheduleParAppraisorService;
@@ -29,11 +36,33 @@ public class ParSystemApplicationTests {
 	@Autowired
 	private ScheduleParContentService scheduleParContentService;
 	
-	@Before
-	public void initDb() {
+	@Autowired
+	ReportParAppraiseService reportParAppraiseService;
 	
-		System.out.println("Testing ..... ");
-		
+	@Test
+	public void createReportParAppraise1() {
+		ReportParAppraise objReportParAppraise=new ReportParAppraise();
+		objReportParAppraise.setId(1);
+		assertEquals(reportParAppraiseService.createReportParAppraise(objReportParAppraise, 1), true);
+	}
+	
+	@Test
+	public void createReportParAppraise3() {
+		ReportParAppraise objReportParAppraise=new ReportParAppraise();
+		objReportParAppraise.setId(2);
+		assertEquals(reportParAppraiseService.createReportParAppraise(objReportParAppraise, 1), true);
+	}
+	@Test
+	public void createReportParAppraise2() {
+		ReportParAppraise objReportParAppraise=new ReportParAppraise();
+		objReportParAppraise.setId(1);
+		assertEquals(reportParAppraiseService.createReportParAppraise(objReportParAppraise, 2), true);
+	}
+	
+	@Test
+	public void createPar() {
+		Par parObj=new Par(1,"E001",3.5,null);
+		parService.createPar(parObj);
 	}
 	
 	@Test
