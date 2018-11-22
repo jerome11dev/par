@@ -29,7 +29,25 @@ public class ReportParAppraisor {
 	@OneToMany(mappedBy="reportParAppraisor",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	@JsonIgnore
 	private List<ScoreParAppraisor> scoreParAppraisors;
+ 
+	
 
+	public ReportParAppraisor(Integer id, String appraisorId, Double appraisorScore) {
+		this.id = id;
+		this.appraisorId = appraisorId;
+		this.appraisorScore = appraisorScore;
+	}
+	
+	public ReportParAppraisor(String appraisorId, Double appraisorScore) {
+		this.appraisorId = appraisorId;
+		this.appraisorScore = appraisorScore;
+	}
+
+	public ReportParAppraisor() {
+		
+	}
+	
+	
 	public Integer getId() {
 		return id;
 	}

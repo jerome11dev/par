@@ -6,27 +6,36 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ReportParAppraise;
 import com.sgic.hrm.entities.ScoreParAppraisee;
 import com.sgic.hrm.service.ParReportForAppraiseeService;
-import com.sgic.hrm.serviceImpl.ReportParAppraiseServiceImpl;
-import com.sgic.hrm.serviceImpl.ScoreParAppraiseeServiceImpl;
+import com.sgic.hrm.service.ParService;
+import com.sgic.hrm.service.ScoreParAppraiseeService;
+import com.sgic.hrm.service.api.ReportParAppraiseeService;
+
 
 @Service 
 public class ParReportForAppraiseeServiceImpl implements ParReportForAppraiseeService {
+	@Autowired 
+	ParService parservice;
 	@Autowired
-	ReportParAppraiseServiceImpl reportParAppraiseService;
+	ReportParAppraiseeService reportParAppraiseService;
 	@Autowired
-	ScoreParAppraiseeServiceImpl scoreParAppraiseeService;
+	ScoreParAppraiseeService scoreParAppraiseeService;
+	
 	@Override
-	public void saveReportAndScore(ReportParAppraise reportParAppraise, List<ScoreParAppraisee> scoreParAppraiseeList,Integer parId) {
+	public void saveReportAndScore(Integer parId,ReportParAppraise reportParAppraise, List<ScoreParAppraisee> scoreParAppraiseeList) {
 		
-		reportParAppraiseService.createReportParAppraise(reportParAppraise, null);
+		if(parservice.findParById(parId)!=null) {
+			Par parObj=parservice.findParById(parId);
+		reportParAppraiseService.createReportParAppraise(reportParAppraise,parObj);
 		Iterator<ScoreParAppraisee> iterator = scoreParAppraiseeList.iterator();
 		while (iterator.hasNext()) {
-			scoreParAppraiseeService.createScoreParAppraisee(iterator.next());
+			scoreParAppraiseeService.createScoreParAppraisee(iterator.next(),reportParAppraise);
 		}
 		
+		}
 	}
 
 	@Override

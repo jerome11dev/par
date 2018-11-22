@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ScheduleParAppraisor;
+import com.sgic.hrm.entities.ScheduleParContent;
 import com.sgic.hrm.service.api.ParScheduleService;
 
 @RunWith(SpringRunner.class)
@@ -22,11 +23,16 @@ public class ParScheduleServiceTest {
 	
 	@Test
 	public void createParScheduleService() {
-		Par parObj=new Par(3,"EM001",null);
+		Par parObj=new Par(1,"EM001",null);
 		List<ScheduleParAppraisor> scheduleParAppraisorList=new ArrayList<ScheduleParAppraisor>();
-		scheduleParAppraisorList.add(new ScheduleParAppraisor(4,"A001"));
+		scheduleParAppraisorList.add(new ScheduleParAppraisor(1,"A001"));
 		scheduleParAppraisorList.add(new ScheduleParAppraisor(2,"A002"));
 		scheduleParAppraisorList.add(new ScheduleParAppraisor(3,"A003"));
-		parScheduleService.createSchedulePar(parObj, scheduleParAppraisorList, null);
+		List<ScheduleParContent> scheduleParContentList=new ArrayList<ScheduleParContent>();
+		scheduleParContentList.add(new ScheduleParContent(1,"C001"));
+		scheduleParContentList.add(new ScheduleParContent(2,"C002"));
+		scheduleParContentList.add(new ScheduleParContent(3,"C003"));
+		scheduleParContentList.add(new ScheduleParContent(4,"C003"));
+		parScheduleService.createSchedulePar(parObj, scheduleParAppraisorList,scheduleParContentList);
 	}
 }
