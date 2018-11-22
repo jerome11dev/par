@@ -1,3 +1,4 @@
+
 package com.sgic.hrm.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -5,9 +6,11 @@ import org.springframework.stereotype.Service;
 
 import com.sgic.hrm.entities.ReportParAppraise;
 import com.sgic.hrm.repository.ReportParAppraiseRepository;
+import com.sgic.hrm.service.ReportParAppraiseeService;
 
 @Service
-public class ReportParAppraiseService {
+public class ReportParAppraiseServiceImpl implements ReportParAppraiseeService
+{
 
 	@Autowired
 	ParServiceImpl parServices;

@@ -17,7 +17,7 @@ import com.sgic.hrm.entities.ReportParAppraise;
 
 import com.sgic.hrm.serviceImpl.ParServiceImpl;
 
-import com.sgic.hrm.serviceImpl.ReportParAppraiseService;
+import com.sgic.hrm.serviceImpl.ReportParAppraiseServiceImpl;
 
 
 @RunWith(SpringRunner.class)
@@ -31,26 +31,26 @@ public class ParSystemApplicationTests {
 
 	
 	@Autowired
-	ReportParAppraiseService reportParAppraiseService;
+	ReportParAppraiseServiceImpl reportParAppraiseServiceImpl;
 	
 	@Test
 	public void createReportParAppraise1() {
 		ReportParAppraise objReportParAppraise=new ReportParAppraise();
 		objReportParAppraise.setId(1);
-		assertEquals(reportParAppraiseService.createReportParAppraise(objReportParAppraise, 1), true);
+		assertEquals(reportParAppraiseServiceImpl.createReportParAppraise(objReportParAppraise, 1), true);
 	}
 	
 	@Test
 	public void createReportParAppraise3() {
 		ReportParAppraise objReportParAppraise=new ReportParAppraise();
 		objReportParAppraise.setId(2);
-		assertEquals(reportParAppraiseService.createReportParAppraise(objReportParAppraise, 1), true);
+		assertEquals(reportParAppraiseServiceImpl.createReportParAppraise(objReportParAppraise, 1), true);
 	}
 	@Test
 	public void createReportParAppraise2() {
 		ReportParAppraise objReportParAppraise=new ReportParAppraise();
 		objReportParAppraise.setId(1);
-		assertEquals(reportParAppraiseService.createReportParAppraise(objReportParAppraise, 2), true);
+		assertEquals(reportParAppraiseServiceImpl.createReportParAppraise(objReportParAppraise, 2), true);
 	}
 	
 	@Test
