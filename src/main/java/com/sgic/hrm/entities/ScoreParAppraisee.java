@@ -16,6 +16,16 @@ public class ScoreParAppraisee {
 	@ManyToOne
 	@JoinColumn(name="report_par_appraise_id")
 	private ReportParAppraise reportParAppraise;
+	
+	public ScoreParAppraisee(int id, String parContentId,Double Score ) {
+	this.id= id;
+	this.parContentId =parContentId;
+	this.Score =Score;
+	}
+	
+	public ScoreParAppraisee() {
+		
+	}
 
 	public Integer getId() {
 		return id;

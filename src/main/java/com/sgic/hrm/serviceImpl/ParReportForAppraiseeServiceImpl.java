@@ -17,8 +17,8 @@ public class ParReportForAppraiseeServiceImpl implements ParReportForAppraiseeSe
 	@Autowired
 	ScoreParAppraiseeServiceImpl scoreParAppraiseeService;
 	@Override
-	public void saveReportAndScore(ReportParAppraise reportParAppraise, List<ScoreParAppraisee> scoreParAppraiseeList,ScoreParAppraisee scoreParAppraisee) {
-		// TODO Auto-generated method stub
+	public void saveReportAndScore(ReportParAppraise reportParAppraise, List<ScoreParAppraisee> scoreParAppraiseeList,Integer parId) {
+		
 		reportParAppraiseService.createReportParAppraise(reportParAppraise, null);
 		Iterator<ScoreParAppraisee> iterator = scoreParAppraiseeList.iterator();
 		while (iterator.hasNext()) {
@@ -29,7 +29,7 @@ public class ParReportForAppraiseeServiceImpl implements ParReportForAppraiseeSe
 
 	@Override
 	public boolean updateParScore() {
-		// TODO Auto-generated method stub
+	
 		return false;
 	}
 

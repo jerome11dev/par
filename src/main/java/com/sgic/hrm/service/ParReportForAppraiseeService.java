@@ -11,7 +11,7 @@ public interface ParReportForAppraiseeService {
 	 * save report entity -save list of par score -save report record
 	 */
 	public void saveReportAndScore(ReportParAppraise reportParAppraise, 
-			List<ScoreParAppraisee>scoreParAppraiseeList,ScoreParAppraisee scoreParAppraisee);
+			List<ScoreParAppraisee>scoreParAppraiseeList,Integer parId);
 
 	// update one par score
 	public boolean updateParScore();
