@@ -1,4 +1,4 @@
-package com.sgic.hrm.serviceImpl;
+package com.sgic.hrm.serviceImpl.api;
 
 import java.util.Iterator;
 import java.util.List;
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ScheduleParAppraisor;
 import com.sgic.hrm.entities.ScheduleParContent;
-import com.sgic.hrm.service.ParScheduleService;
 import com.sgic.hrm.service.ParService;
 import com.sgic.hrm.service.ScheduleParAppraisorService;
+import com.sgic.hrm.service.api.ParScheduleService;
 
 @Service
 public class ParScheduleServiceImpl implements ParScheduleService{

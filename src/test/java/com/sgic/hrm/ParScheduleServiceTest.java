@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ScheduleParAppraisor;
-import com.sgic.hrm.service.ParScheduleService;
+import com.sgic.hrm.service.api.ParScheduleService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

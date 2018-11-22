@@ -1,4 +1,4 @@
-package com.sgic.hrm.service;
+package com.sgic.hrm.service.api;
 
 import java.util.List;
 
