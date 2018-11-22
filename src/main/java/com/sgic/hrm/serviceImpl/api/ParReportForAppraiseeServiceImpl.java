@@ -1,4 +1,4 @@
-package com.sgic.hrm.serviceImpl;
+package com.sgic.hrm.serviceImpl.api;
 
 import java.util.Iterator;
 import java.util.List;
@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.sgic.hrm.entities.ReportParAppraise;
 import com.sgic.hrm.entities.ScoreParAppraisee;
 import com.sgic.hrm.service.ParReportForAppraiseeService;
+import com.sgic.hrm.serviceImpl.ReportParAppraiseServiceImpl;
+import com.sgic.hrm.serviceImpl.ScoreParAppraiseeServiceImpl;
 
 @Service 
 public class ParReportForAppraiseeServiceImpl implements ParReportForAppraiseeService {
