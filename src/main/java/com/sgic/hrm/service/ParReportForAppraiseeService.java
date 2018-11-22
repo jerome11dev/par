@@ -9,9 +9,12 @@ public interface ParReportForAppraiseeService {
 
 	/*
 	 * save report entity -save list of par score -save report record
+	 * find the par object by par id
+	 * save the ReportParAppraise including par object
+	 * write iteratoror to save the List of ScoreParAppraisee
 	 */
-	public void saveReportAndScore(ReportParAppraise reportParAppraise, 
-			List<ScoreParAppraisee>scoreParAppraiseeList,ScoreParAppraisee scoreParAppraisee);
+	public void saveReportAndScore(Integer parId,ReportParAppraise reportParAppraise, 
+			List<ScoreParAppraisee> scoreParAppraiseeList);
 
 	// update one par score
 	public boolean updateParScore();

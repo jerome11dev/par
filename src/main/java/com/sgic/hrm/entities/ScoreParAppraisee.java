@@ -11,11 +11,21 @@ public class ScoreParAppraisee {
 	@Id
 	private Integer id;
 	private String parContentId;
-	private Double Score;
+	private Double score;
 	
 	@ManyToOne
 	@JoinColumn(name="report_par_appraise_id")
 	private ReportParAppraise reportParAppraise;
+	
+	public ScoreParAppraisee(int id, String parContentId,Double score) {
+	this.id= id;
+	this.parContentId =parContentId;
+	this.score =score;
+	}
+	
+	public ScoreParAppraisee() {
+		
+	}
 
 	public Integer getId() {
 		return id;
@@ -34,11 +44,11 @@ public class ScoreParAppraisee {
 	}
 
 	public Double getScore() {
-		return Score;
+		return score;
 	}
 
 	public void setScore(Double score) {
-		Score = score;
+		this.score = score;
 	}
 
 	public ReportParAppraise getReportParAppraise() {

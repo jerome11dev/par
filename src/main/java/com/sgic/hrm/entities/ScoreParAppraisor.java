@@ -20,6 +20,17 @@ public class ScoreParAppraisor {
 		return id;
 	}
 
+	public ScoreParAppraisor(Integer id, String parContentId, Integer score) {
+		
+		this.id = id;
+		this.parContentId = parContentId;
+		this.Score=score;
+	}
+	
+	public ScoreParAppraisor() {
+		
+	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}

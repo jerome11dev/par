@@ -27,7 +27,6 @@ public class ReportParAppraise {
 	private List<ScoreParAppraisee> scoreParAppraiseeList;
 
 	public ReportParAppraise(int id) {
-		// TODO Auto-generated constructor stub
 		this.id =id;
 	}
 	public ReportParAppraise() {

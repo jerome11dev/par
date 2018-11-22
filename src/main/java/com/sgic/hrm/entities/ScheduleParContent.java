@@ -24,6 +24,10 @@ public class ScheduleParContent {
 		this.id = id;
 		this.parContentId = parContentId;
 	}
+	
+	public ScheduleParContent() {
+	
+	}
 
 	public Integer getId() {
 		return id;
