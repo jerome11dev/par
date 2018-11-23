@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.sgic.hrm.entities.ReportParAppraisor;
 import com.sgic.hrm.entities.ScoreParAppraisor;
-import com.sgic.hrm.service.ParReportForAppraisorService;
+import com.sgic.hrm.service.api.ParReportForAppraisorService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

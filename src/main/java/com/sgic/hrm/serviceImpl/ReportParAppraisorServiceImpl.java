@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ReportParAppraisor;
 import com.sgic.hrm.repository.ReportParAppraisorRepository;
-import com.sgic.hrm.service.api.ReportParAppraisorService;
+import com.sgic.hrm.service.ReportParAppraisorService;
 @Service
 public class ReportParAppraisorServiceImpl implements ReportParAppraisorService {
 @Autowired

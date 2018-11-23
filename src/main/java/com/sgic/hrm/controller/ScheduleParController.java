@@ -46,6 +46,7 @@ public ScheduleParDTO getSchedulePar() {
 	
 	@PostMapping("/schedulepar")
 	public void createSchedulePar(@RequestBody ScheduleParDTO objScheduleParDTO) {
+		//boolean=
 		Par par=new Par();
 		par.setId(objScheduleParDTO.getId());
 		par.setEmpId(objScheduleParDTO.getEmpId());

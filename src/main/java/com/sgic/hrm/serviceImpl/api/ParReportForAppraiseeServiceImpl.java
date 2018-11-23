@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ReportParAppraise;
 import com.sgic.hrm.entities.ScoreParAppraisee;
-import com.sgic.hrm.service.ParReportForAppraiseeService;
 import com.sgic.hrm.service.ParService;
+import com.sgic.hrm.service.ReportParAppraiseeService;
 import com.sgic.hrm.service.ScoreParAppraiseeService;
-import com.sgic.hrm.service.api.ReportParAppraiseeService;
+import com.sgic.hrm.service.api.ParReportForAppraiseeService;
 
 
 @Service 
