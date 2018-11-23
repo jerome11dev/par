@@ -1,14 +1,20 @@
 package com.sgic.hrm.entities;
 
+
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ScheduleParContent {
+public class ScheduleParContent{
+
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
 	@ManyToOne
@@ -19,16 +25,6 @@ public class ScheduleParContent {
 	
 	
 
-	public ScheduleParContent(Integer id, String parContentId) {
-	
-		this.id = id;
-		this.parContentId = parContentId;
-	}
-	
-	public ScheduleParContent() {
-	
-	}
-
 	public Integer getId() {
 		return id;
 	}
@@ -36,6 +32,17 @@ public class ScheduleParContent {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
+	public ScheduleParContent(String parContentId) {
+	
+		this.parContentId = parContentId;
+	}
+	
+	public ScheduleParContent() {
+	
+	}
+
+
 
 	public Par getParId() {
 		return parId;

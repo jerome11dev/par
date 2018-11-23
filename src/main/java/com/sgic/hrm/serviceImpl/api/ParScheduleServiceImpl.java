@@ -6,6 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sgic.hrm.dto.ScheduleParAppraisorsDTO;
+import com.sgic.hrm.dto.ScheduleParContentDTO;
+import com.sgic.hrm.dtoMapper.ScheduleParAppraisorsDTOtoScheduleParAppraisors;
+import com.sgic.hrm.dtoMapper.ScheduleParContentDTOtoScheduleParContent;
 import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ScheduleParAppraisor;
 import com.sgic.hrm.entities.ScheduleParContent;
@@ -15,36 +19,39 @@ import com.sgic.hrm.service.ScheduleParContentService;
 import com.sgic.hrm.service.api.ParScheduleService;
 
 @Service
-public class ParScheduleServiceImpl implements ParScheduleService{
+public class ParScheduleServiceImpl implements ParScheduleService {
 
 	@Autowired
 	ParService parService;
-	
+
 	@Autowired
 	ScheduleParAppraisorService scheduleParAppraisorService;
-	
+
 	@Autowired
 	ScheduleParContentService scheduleParContentService;
-	
+
 	@Override
-	public void createSchedulePar(Par par, List<ScheduleParAppraisor> scheduleParAppraisorList,
-			List<ScheduleParContent> scheduleParContentList) {
-	
-		//save par object
+	public void createSchedulePar(Par par, List<ScheduleParAppraisorsDTO> scheduleParAppraisorList,
+			List<ScheduleParContentDTO> scheduleParContentList) {
+
+		// save par object
 		parService.createPar(par);
-		
-		//save Appraisor List
-		Iterator<ScheduleParAppraisor> iteratorScheduledAppraisor = scheduleParAppraisorList.iterator();
+
+		// save Appraisor List
+		Iterator<ScheduleParAppraisorsDTO> iteratorScheduledAppraisor = scheduleParAppraisorList.iterator();
 		while (iteratorScheduledAppraisor.hasNext()) {
-			scheduleParAppraisorService.createScheduleParAppraisor(iteratorScheduledAppraisor.next(), par);
+
+			scheduleParAppraisorService.createScheduleParAppraisor(
+					ScheduleParAppraisorsDTOtoScheduleParAppraisors.getmapped(iteratorScheduledAppraisor.next()), par);
 		}
-		
-		//save Content List
-		Iterator<ScheduleParContent> iteratorScheduledContent = scheduleParContentList.iterator();
+
+		// save Content List
+		Iterator<ScheduleParContentDTO> iteratorScheduledContent = scheduleParContentList.iterator();
 		while (iteratorScheduledContent.hasNext()) {
-			scheduleParContentService.createScheduleParContent(iteratorScheduledContent.next(), par);
+			scheduleParContentService.createScheduleParContent(
+					ScheduleParContentDTOtoScheduleParContent.getmapped(iteratorScheduledContent.next()), par);
 		}
-		
+
 	}
 
 }

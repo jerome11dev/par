@@ -1,16 +1,30 @@
 package com.sgic.hrm.entities;
 
 
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ScheduleParAppraisor {
+public class ScheduleParAppraisor{
+	
+
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	@ManyToOne
 	@JoinColumn(name="par_id")
 	private Par parId;
@@ -20,8 +34,7 @@ public class ScheduleParAppraisor {
 	
 	
 
-	public ScheduleParAppraisor(Integer id,String appraisor_id) {
-		this.id = id;
+	public ScheduleParAppraisor(String appraisor_id) {
 		this.appraisor_id = appraisor_id;
 	}
 
@@ -29,13 +42,7 @@ public class ScheduleParAppraisor {
 		
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 
 	public Par getParId() {
 		return parId;

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sgic.hrm.dto.ScheduleParAppraisorsDTO;
+import com.sgic.hrm.dto.ScheduleParContentDTO;
 import com.sgic.hrm.dto.ScheduleParDTO;
 import com.sgic.hrm.entities.Par;
 import com.sgic.hrm.entities.ScheduleParAppraisor;
@@ -28,16 +30,15 @@ public class ScheduleParController {
 public ScheduleParDTO getSchedulePar() {
 	ScheduleParDTO objScheduleParDTO=new ScheduleParDTO();
 	
-	List<ScheduleParAppraisor> scheduleParAppraisorList=new ArrayList<ScheduleParAppraisor>();
-	scheduleParAppraisorList.add(new ScheduleParAppraisor(1,"A001"));
-	scheduleParAppraisorList.add(new ScheduleParAppraisor(2,"A002"));
-	scheduleParAppraisorList.add(new ScheduleParAppraisor(3,"A003"));
+	List<ScheduleParAppraisorsDTO> scheduleParAppraisorList=new ArrayList<ScheduleParAppraisorsDTO>();
+	scheduleParAppraisorList.add(new ScheduleParAppraisorsDTO("A001"));
+	scheduleParAppraisorList.add(new ScheduleParAppraisorsDTO("A002"));
+	scheduleParAppraisorList.add(new ScheduleParAppraisorsDTO("A003"));
 	
-	List<ScheduleParContent> scheduleParContentList=new ArrayList<ScheduleParContent>();
-	scheduleParContentList.add(new ScheduleParContent(1,"C001"));
-	scheduleParContentList.add(new ScheduleParContent(2,"C002"));
-	scheduleParContentList.add(new ScheduleParContent(3,"C003"));
-	scheduleParContentList.add(new ScheduleParContent(4,"C003"));
+	List<ScheduleParContentDTO> scheduleParContentList=new ArrayList<ScheduleParContentDTO>();
+	scheduleParContentList.add(new ScheduleParContentDTO("C001"));
+	scheduleParContentList.add(new ScheduleParContentDTO("C002"));
+	
 	
 	objScheduleParDTO.setScheduleParAppraisorsList(scheduleParAppraisorList);
 	objScheduleParDTO.setScheduleParContentList(scheduleParContentList);

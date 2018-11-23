@@ -2,9 +2,10 @@ package com.sgic.hrm.service.api;
 
 import java.util.List;
 
+import com.sgic.hrm.dto.ScheduleParAppraisorsDTO;
+import com.sgic.hrm.dto.ScheduleParContentDTO;
 import com.sgic.hrm.entities.Par;
-import com.sgic.hrm.entities.ScheduleParAppraisor;
-import com.sgic.hrm.entities.ScheduleParContent;
+
 
 public interface ParScheduleService {
 
@@ -25,8 +26,8 @@ public interface ParScheduleService {
 	 */
 	
 	public void createSchedulePar(Par par,
-			List<ScheduleParAppraisor> scheduleParAppraisorList,
-			List<ScheduleParContent> scheduleParContentList);
+			List<ScheduleParAppraisorsDTO> scheduleParAppraisorList,
+			List<ScheduleParContentDTO> scheduleParContentList);
 	
 	
 	//add par content 

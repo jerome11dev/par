@@ -1,7 +1,7 @@
 package com.sgic.hrm.dto;
 
 import java.util.List;
-import com.sgic.hrm.entities.Par;
+
 import com.sgic.hrm.entities.ScoreParAppraisee;
 
 public class ReportParAppraiseeDTO {
