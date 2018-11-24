@@ -3,8 +3,10 @@ package com.sgic.hrm.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jboss.logging.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -26,7 +28,7 @@ public class ScheduleParController {
 	@Autowired
 	ParScheduleService parScheduleService;
 	
-	@GetMapping("/schedulepar")
+	@GetMapping("/schedulepartemp")
 public ScheduleParDTO getSchedulePar() {
 	ScheduleParDTO objScheduleParDTO=new ScheduleParDTO();
 	
@@ -56,5 +58,11 @@ public ScheduleParDTO getSchedulePar() {
 				objScheduleParDTO.getScheduleParAppraisorsList(), 
 				objScheduleParDTO.getScheduleParContentList());
 	}
+	
+//	@GetMapping("/schedulepar/{empid}")
+//public Par getScheduleParEmpId(@PathVariable("empid") String empid) {
+//	
+//	return objScheduleParDTO;
+//}
 	
 }
