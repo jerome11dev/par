@@ -3,26 +3,23 @@ package com.sgic.hrm.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jboss.logging.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sgic.hrm.dto.ScheduleParAppraisorsDTO;
 import com.sgic.hrm.dto.ScheduleParContentDTO;
 import com.sgic.hrm.dto.ScheduleParDTO;
 import com.sgic.hrm.entities.Par;
-import com.sgic.hrm.entities.ScheduleParAppraisor;
-import com.sgic.hrm.entities.ScheduleParContent;
 import com.sgic.hrm.service.api.ParScheduleService;
 
 
 
 @RestController
+@CrossOrigin
 public class ScheduleParController {
 
 	@Autowired
