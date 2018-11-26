@@ -1,10 +1,6 @@
 package com.sgic.hrm.service;
 
 import java.util.List;
-
-
-
-
 import com.sgic.hrm.entities.ParAppraisor;
 
 public interface ParAppraisorService {

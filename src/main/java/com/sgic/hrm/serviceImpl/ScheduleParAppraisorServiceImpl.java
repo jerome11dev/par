@@ -1,5 +1,7 @@
 package com.sgic.hrm.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +21,13 @@ public class ScheduleParAppraisorServiceImpl implements ScheduleParAppraisorServ
 		scheduleParAppraisor.setParId(par);
 		scheduleParAppraisorRepo.save(scheduleParAppraisor);
 	}
+
+	@Override
+	public List<ScheduleParAppraisor> findScheduleParAppraisorByParId(Par parId) {
+		// TODO Auto-generated method stub
+		return scheduleParAppraisorRepo.findByParId(parId);
+	}
+
+
 	
 }

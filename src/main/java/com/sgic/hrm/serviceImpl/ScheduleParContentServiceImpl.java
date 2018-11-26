@@ -1,5 +1,7 @@
 package com.sgic.hrm.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,12 @@ public class ScheduleParContentServiceImpl implements ScheduleParContentService{
 	public void createScheduleParContent(ScheduleParContent scheduleParContent, Par par) {
 		scheduleParContent.setParId(par);
 		scheduleParContentRepo.save(scheduleParContent);
+	}
+
+	@Override
+	public List<ScheduleParContent> findScheduleParContentByParId(Par parId) {
+		// TODO Auto-generated method stub
+		return scheduleParContentRepo.findByParId(parId);
 	}
 
 	

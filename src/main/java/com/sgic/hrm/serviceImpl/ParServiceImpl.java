@@ -2,6 +2,8 @@ package com.sgic.hrm.serviceImpl;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,20 @@ public class ParServiceImpl implements ParService {
 		}
 		return false;
 	}
+
+	@Override
+	public List<Par> parHistory() {
+		// TODO Auto-generated method stub
+		return parRepo.findAll();
+	}
+
+	@Override
+	public List<Par> findByEmployeeId(String id) {
+		// TODO Auto-generated method stub
+		return parRepo.findByEmployeeId(id);
+	}
+
+
 	
 	
 }

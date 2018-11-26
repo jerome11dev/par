@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.sgic.hrm.dto.ScheduleParAppraisorsDTO;
 import com.sgic.hrm.dto.ScheduleParContentDTO;
+import com.sgic.hrm.dto.ScheduleParDTO;
 import com.sgic.hrm.entities.Par;
 
 
@@ -28,7 +29,9 @@ public interface ParScheduleService {
 	public void createSchedulePar(Par par,
 			List<ScheduleParAppraisorsDTO> scheduleParAppraisorList,
 			List<ScheduleParContentDTO> scheduleParContentList);
+	// get schedule par
 	
+	public ScheduleParDTO getSchedulePar(Integer parId);
 	
 	//add par content 
 	// remove par content

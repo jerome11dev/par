@@ -28,7 +28,7 @@ public class Par {
 	@JsonIgnore
 	private List<ReportParAppraisor> reportParAppraisors;
 	
-	@OneToMany(mappedBy="parId",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="parId",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	@JsonIgnore
 	private List<ScheduleParAppraisor> scheduleParAppraisorsList;
 	
